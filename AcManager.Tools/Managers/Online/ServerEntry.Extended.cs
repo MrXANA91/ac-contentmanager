@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using AcManager.Tools.ContentInstallation;
+using AcManager.Tools.Helpers;
 using AcManager.Tools.Helpers.Api.Kunos;
 using AcManager.Tools.Objects;
 using AcTools.Utils;
@@ -60,7 +61,7 @@ namespace AcManager.Tools.Managers.Online {
 
         public string Description {
             get => _description;
-            set => Apply(ProcessDescription(value, true), ref _description);
+            set => Apply(ProcessDescription(value, SettingsHolder.Online.HideImagesInServersDescription), ref _description);
         }
 
         private string _trackBaseId;
